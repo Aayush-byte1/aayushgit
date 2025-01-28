@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Panda Facts</title>
+<style>
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#fact-container {
+  margin-top: 30px;
+  font-size: 1.5em;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+  <h1>Amazing Panda Facts</h1>
+  <button id="generate-fact">Generate a Fact</button>
+  <div id="fact-container"></div>
+
+  <script>
+    const facts = [
+      "Giant pandas are native to southwestern China.",
+      "The scientific name of a giant panda is Ailuropoda melanoleuca, which means \"black and white cat-foot.\"",
+      "Despite their size, giant pandas are surprisingly good climbers.",
+      "A panda's diet consists almost entirely of bamboo.",
+      "Pandas have a special bone in their wrist that acts like a thumb, helping them grip bamboo.",
+      "Giant pandas are considered a vulnerable species.",
+      "A group of pandas is called an embarrassment.",
+      "Pandas spend up to 14 hours a day eating.",
+      "A newborn panda is about the size of a stick of butter.",
+      "Pandas have a very short digestive system for a herbivore, meaning they absorb less than 20% of the nutrients from their food."
+    ];
+
+    const factContainer = document.getElementById('fact-container');
+    const generateFactButton = document.getElementById('generate-fact');
+
+    generateFactButton.addEventListener('click', () => {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      factContainer.textContent = facts[randomIndex];
+    });
+  </script>
+</body>
+</html>
+
